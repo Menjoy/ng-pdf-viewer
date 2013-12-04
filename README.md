@@ -1,6 +1,6 @@
 # fork from  akrenmair
 
-you need have node
+you need to have node
 ``` js
 $ node server.js 
 ```
