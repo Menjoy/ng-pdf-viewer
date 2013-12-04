@@ -1,3 +1,20 @@
+# fork from  akrenmair
+
+you need have node
+``` js
+$ node server.js 
+```
+
+In the browser
+``` js
+localhost:8000/demo/index.html
+```
+
+To install with bower
+``` js
+bower install ng-pdfviewer
+```
+
 # ng-pdfviewer
 
 AngularJS PDF viewer directive using pdf.js.
@@ -40,6 +57,18 @@ app.controller('TestCtrl', [ '$scope', 'PDFViewerService', function($scope, pdf)
 * AngularJS (http://angularjs.org/)
 * PDF.js (http://mozilla.github.io/pdf.js/)
 
+### pdf.js pdf.worker.js compatibility.js  --From github.com/mozilla/pdf.js
+  In order to bundle all `src/` files into two productions scripts and build the generic
+  viewer, issue:
+
+  $ node make generic
+
+  This will generate `pdf.js` and `pdf.worker.js` in the `build/generic/build/` directory.
+  Both scripts are needed but only `pdf.js` needs to be included since `pdf.worker.js` will
+  be loaded by `pdf.js`. If you want to support more browsers than Firefox you'll also need
+  to include `compatibility.js` from `build/generic/web/`. The PDF.js files are large and
+  should be minified for production.
+
 ## Usage
 
 Include `ng-pdfviewer.js` as JavaScript file, along with `pdf.js` and `pdf.compat.js`.
@@ -53,5 +82,4 @@ You can now use the `pdfviewer` tag in your HTML source.
 MIT. See LICENSE.md for further details.
 
 ## Author
-
 Andreas Krennmair <ak@synflood.at>
