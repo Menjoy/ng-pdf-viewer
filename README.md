@@ -1,4 +1,5 @@
-Fork from https://github.com/aurigadl/ng-pdfviewer
+# Fork from
+
 
 you need to have node
 ``` js
