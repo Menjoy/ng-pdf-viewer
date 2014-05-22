@@ -109,17 +109,29 @@ directive('pdfviewer', [ '$parse', function($parse) {
 				}
 			});
 		} ],
-		link: function(scope, iElement, iAttr) {
-			canvas = iElement.find('canvas')[0];
-			instance_id = iAttr.id;
+        link: function($scope, $elem, attrs) {
+            canvas = $elem.find('canvas')[0];
+            instance_id = attrs.id;
 
-			iAttr.$observe('src', function(v) {
-				console.log('src attribute changed, new value is', v);
-				if (v !== undefined && v !== null && v !== '') {
-					scope.pageNum = 1;
-					scope.loadPDF(scope.src);
-				}
-			});
+            attrs.$observe('src', function(url) {
+                if (url !== undefined && url !== null && url !== '') {
+                    $scope.pageNum = 1;
+
+                    var oReq = new XMLHttpRequest();
+                    oReq.open('GET', url, true);
+                    oReq.responseType = 'arraybuffer';
+
+                    oReq.onload = function () {
+                        var arrayBuffer = oReq.response;
+                        if (arrayBuffer) {
+                            var byteArray = new Uint8Array(arrayBuffer);
+                            $scope.loadPDF(byteArray);
+                        }
+                    };
+
+                    oReq.send(null);
+                }
+            });
 		}
 	};
 }]).

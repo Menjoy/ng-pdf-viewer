@@ -1,19 +1,5 @@
-Fork from https://github.com/aurigadl/ng-pdfviewer
-
-you need to have node
-``` js
-$ node server.js 
-```
-
-In the browser
-``` js
-localhost:8000/demo/index.html
-```
-
-To install with bower
-``` js
-bower install ng-pdfviewer
-```
+# Fork from
+https://github.com/aurigadl/ng-pdfviewer
 
 # Change list
 
