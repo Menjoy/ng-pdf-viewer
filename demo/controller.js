@@ -3,7 +3,7 @@ var app = angular.module('testApp', [ 'ngPDFViewer' ]);
 app.controller('TestController', [ '$scope', 'PDFViewerService', function($scope, pdf) {
 	console.log('TestController: new instance');
 
-	$scope.pdfURL = "test.pdf";
+	$scope.pdfURL = 'http://www.acm.org/sigs/publications/sig-alternate.pdf';
 
 	$scope.instance = pdf.Instance("viewer");
 
