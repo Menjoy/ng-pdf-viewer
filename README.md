@@ -1,4 +1,4 @@
-# fork from  akrenmair
+# fork from https://github.com/aurigadl/ng-pdfviewer
 
 you need to have node
 ``` js
@@ -15,6 +15,10 @@ To install with bower
 bower install ng-pdfviewer
 ```
 
+# Change list
+
+I use pdfjs in cordova application, and need to show embed pdf file. It didn't work with forked plugin, but it works now.
+
 # ng-pdfviewer
 
 AngularJS PDF viewer directive using pdf.js.
@@ -25,8 +29,10 @@ AngularJS PDF viewer directive using pdf.js.
 <br>
 <span>{{currentPage}}/{{totalPages}}</span>
 <br>
-<pdfviewer src="test.pdf" on-page-load='pageLoaded(page,total)' id="viewer"></pdfviewer>
+<pdfviewer src="http://www.acm.org/sigs/publications/sig-alternate.pdf" on-page-load='pageLoaded(page,total)' id="viewer"></pdfviewer>
 ```
+
+Src "http://www.acm.org/sigs/publications/sig-alternate.pdf" just for example here!
 
 and in your AngularJS code:
 
