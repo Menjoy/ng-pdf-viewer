@@ -4,6 +4,7 @@ https://github.com/aurigadl/ng-pdfviewer
 # Change list
 
 I use pdfjs in cordova application, and need to show embed pdf file. It didn't work with forked plugin, but it works now.
+NOTE: in my application pdfjs doesn't work on android (in webview), but in chrome or iOS works good. 
 
 # ng-pdfviewer
 
